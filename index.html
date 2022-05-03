@@ -1,100 +1,177 @@
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | 0x0E-unity-webvr</title>
-    <meta name="description" content="">
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <h1>
-      Welcome to this WebXR experience!
-    </h1>
-    <h3>
-      You can interact with the cubes with your mouse. If you'd like more of an immersive experience you can click on VR on the bottom right and connect your VR headset and interact with the environment however you'd like.
-    </h3>
-    <div id="unity-container">
-      <div id="unity-canvas-container">
-        <canvas id="unity-canvas" style="width: 100%; height: 100%;"></canvas>
-      </div>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <button id="entervr" value="Enter VR" disabled>VR</button>
-        <button id="enterar" value="Enter AR" disabled>AR</button>
-        <div id="unity-webxr-link">Using <a href="https://github.com/De-Panther/unity-webxr-export" target="_blank" title="WebXR Export">WebXR Export</a></div>
-        <div id="unity-build-title">0x0E-unity-webvr</div>
-      </div>
-    </div>
-    <script>
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Four - webvr2020 keyboard and mouse.loader.js";
-      var config = {
-        dataUrl: buildUrl + "/Four - webvr2020 keyboard and mouse.data.unityweb",
-        frameworkUrl: buildUrl + "/Four - webvr2020 keyboard and mouse.framework.js.unityweb",
-        codeUrl: buildUrl + "/Four - webvr2020 keyboard and mouse.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "HolbertonSchool",
-        productName: "0x0E-unity-webvr",
-        productVersion: "0.1",
-      };
+<!DOCTYPE HTML>
+<!--
+	Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Matt Feliciano</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var canvasContainer = document.querySelector("#unity-canvas-container");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var unityInstance = null;
-      
+		<!-- Nav -->
+			<nav id="nav">
+				<ul class="container">
+					<li><a href="#top">Top</a></li>
+					<li><a href="#work">Work</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
 
-      canvasContainer.style.width = "960px";
-      canvasContainer.style.height = "600px";
-      loadingBar.style.display = "block";
+		<!-- Home -->
+			<article id="top" class="wrapper style1">
+				<div class="container">
+					<div class="row">
+						<div class="col-4 col-5-large col-12-medium">
+							<span class="image fit"><img src="images/Profile Picture.png" alt="" /></span>
+						</div>
+						<div class="col-8 col-7-large col-12-medium">
+							<header>
+								<h1>Hi. I'm <strong>Matt Feliciano</strong>.</h1>
+							</header>
+							<p>Software Engineer--Specializing in AR/VR</p>
+							<a href="#work" class="button large scrolly">Learn about what I do</a>
+						</div>
+					</div>
+				</div>
+			</article>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((instance) => {
-          unityInstance = instance;
-          loadingBar.style.display = "none";
-          if (fullscreenButton)
-          {
-            fullscreenButton.onclick = () => {
-              unityInstance.SetFullscreen(1);
-            };
-          }
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
+		<!-- Work -->
+			<article id="work" class="wrapper style2">
+				<div class="container">
+					<header>
+						<h2>Here's what I can do</h2>
+						<p>Skills and technology that I have experience working with</p>
+					</header>
+					<div class="row aln-center">
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon featured fa-file-code"></span>
+								<h3>Coding Languages</h3>
+								<p>
+									<li>C\C++</li>
+									<li>C#</li>
+									<li>Python</li>
+									<li>JavaScript</li>
+									<li>HTML5/CSS</li>
+									<li>MySQL</li>
+								</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon solid featured fa-terminal"></span>
+								<h3>Tools</h3>
+								<p>
+									<li>Github</li>
+									<li>MongoDB</li>
+									<li>Unity</li>
+									<li>Linux</li>
+									<li>Bash</li>
+									<li>.NET</li>
+								</p>
+							</section>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+								<span class="icon featured fa-keyboard"></span>
+								<h3>Other</h3>
+								<p>
+									<li>Project Management</li>
+									<li>Group Facilitation</li>
+									<li>High Oral/Written Communication Skills</li>
+									<li>Detail-oriented</li>
+									<li>Review technical architecture documentation and implement deliverables</li>
+								</p>
+							</section>
+						</div>
+					</div>
+					<footer>
+						<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
+					</footer>
+				</div>
+			</article>
 
-      let enterARButton = document.getElementById('enterar');
-      let enterVRButton = document.getElementById('entervr');
+		<!-- Portfolio -->
+			<article id="portfolio" class="wrapper style3">
+				<div class="container">
+					<header>
+						<h2>Here's some of the projects I have done.</h2>
+					</header>
+					<div class="row">
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="https://github.com/maxlov/VR_Multiplayer_Playground" class="image featured"><img src="images/VaporBall.png" alt="VaporBall VR" /></a>
+								<h3><a href="https://github.com/maxlov/VR_Multiplayer_Playground">VaporBall VR</a></h3>
+								<p>A multiplayer online battle arena VR game.</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="https://github.com/Mfeliciano778/AirBnB_clone" class="image featured"><img src="images/AirBnB.png" alt="AirBnB Example" /></a>
+								<h3><a href="https://github.com/Mfeliciano778/AirBnB_clone">AirBnB Clone</a></h3>
+								<p>A clone of AirBnB website with filtering functionality.</p>
+							</article>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<article class="box style2">
+								<a href="https://github.com/Ethan-23/Galaxy-Miner" class="image featured"><img src="images/Galaxy_Miner.png" alt="Galaxy Miner" /></a>
+								<h3><a href="https://github.com/Ethan-23/Galaxy-Miner">Galaxy Miner</a></h3>
+								<p>A web application that simulates an idle game.</p>
+							</article>
+						</div>
+					</div>
+					<footer>
+						<a href="#contact" class="button large scrolly">Get in touch with me</a>
+					</footer>
+				</div>
+			</article>
 
-      document.addEventListener('onARSupportedCheck', function (event) {
-        enterARButton.disabled = !event.detail.supported;
-      }, false);
-      document.addEventListener('onVRSupportedCheck', function (event) {
-        enterVRButton.disabled = !event.detail.supported;
-      }, false);
+		<!-- Contact -->
+			<article id="contact" class="wrapper style4">
+				<div class="col-12">
+					<h3>Find me on ...</h3>
+					<ul class="social">
+						<li><a href="https://twitter.com/MattMatt778" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.linkedin.com/in/matthew-feliciano778/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://github.com/Mfeliciano778" class="icon brands fa-github"><span class="label">Github</span></a></li>
+						<!--				
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
+							<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
+							<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
+							<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
+							<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
+							<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
+							<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
+							<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
+							<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
+							<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
+							<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
+						-->
+					</ul>
+					<hr />
+				</div>
+				<footer>
+					<ul id="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</footer>
+			</article>
 
-      enterARButton.addEventListener('click', function (event) {
-        unityInstance.Module.WebXR.toggleAR();
-      }, false);
-      enterVRButton.addEventListener('click', function (event) {
-        unityInstance.Module.WebXR.toggleVR();
-      }, false);
-    </script>
-  </body>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
